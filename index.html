@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#075b38">
+  <meta name="description" content="Alimentos, salud y equipo para cuidar lo que más importa. Compra en La Granja.">
+  <title>La Granja | Todo para tu campo</title>
+  <link rel="icon" type="image/png" href="Isotipo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="announcement">Lo bueno del campo, más cerca de ti <span>Envíos a todo el país</span></div>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="La Granja, inicio">
+      <img class="brand-logo" src="Logotipo.png" alt="La Granja">
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#productos">Tienda</a>
+      <a href="#categorias">Categorías</a>
+      <a href="#como-comprar">Cómo comprar</a>
+      <a href="#consejos">Consejos</a>
+      <a href="#nosotros">Nuestra historia</a>
+      <a href="#preguntas">Preguntas</a>
+      <a href="#ayuda">Contacto</a>
+      <div class="mobile-auth-actions" aria-label="Opciones de cuenta">
+        <button type="button" id="menu-iniciar-sesion">Iniciar sesión</button>
+        <button type="button" id="menu-registrarse">Registrarse</button>
+        <button type="button" id="menu-mi-cuenta" hidden>Mi cuenta</button>
+      </div>
+    </nav>
+    <div class="header-actions">
+      <label class="header-search"><span class="sr-only">Buscar productos</span><span aria-hidden="true">⌕</span><input id="busqueda" type="search" placeholder="¿Qué necesitas?" autocomplete="off"></label>
+      <button class="cart-trigger" id="abrir-carrito" type="button" aria-label="Abrir carrito">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span class="cart-label">Carrito</span><span class="cart-count" id="contador-carrito">0</span>
+      </button>
+      <div class="auth-actions" aria-label="Opciones de cuenta">
+        <button class="account-trigger account-login" id="abrir-sesion" type="button">Iniciar sesión</button>
+        <button class="account-trigger account-register" id="abrir-registro" type="button">Registrarse</button>
+        <button class="account-trigger account-profile" id="abrir-cuenta" type="button">Mi cuenta</button>
+      </div>
+      <button class="notification-trigger" id="abrir-notificaciones" type="button" aria-label="Ver notificaciones">♧<span aria-hidden="true"></span></button>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> De nuestra tierra, para la tuya</p>
+        <h1 id="hero-title">Cuidar el campo<br>es cuidar <em>la vida.</em></h1>
+        <p class="hero-description">Lo que tu ganado necesita, con la confianza de quienes también vivimos el campo.</p>
+        <a class="button button-light" href="#productos">Explorar productos <span aria-hidden="true">↗</span></a>
+        <div class="hero-note"><span class="note-mark">★</span><span><strong>De campo a campo</strong><br>Atención cercana, siempre.</span></div>
+      </div>
+      <div class="hero-photo" role="img" aria-label="Ganado pastando en una pradera verde">
+        <div class="photo-caption"><span>01 / 04</span><strong>Lo esencial para tu día a día</strong></div>
+      </div>
+      <div class="hero-stamp" aria-hidden="true"><span>HECHO PARA</span><strong>EL<br>CAMPO</strong><i>✳</i></div>
+    </section>
+
+    <section class="benefits" aria-label="Beneficios de La Granja">
+      <div><span class="benefit-icon">01</span><p><strong>Calidad confiable</strong><br>Marcas que conocemos</p></div>
+      <div><span class="benefit-icon">02</span><p><strong>Te asesoramos</strong><br>Personas, no respuestas automáticas</p></div>
+      <div><span class="benefit-icon">03</span><p><strong>Hasta tu campo</strong><br>Envíos con seguimiento</p></div>
+    </section>
+
+    <section class="shop-section" id="productos">
+      <div class="section-heading">
+        <div><p class="eyebrow">La tienda</p><h2>Lo que tu campo necesita</h2></div>
+        <p>Una buena temporada empieza con buenos aliados.</p>
+      </div>
+      <div class="shop-toolbar">
+        <div class="filters" role="group" aria-label="Filtrar por categoría">
+          <button class="filter-button selected" type="button" data-categoria="todos" aria-pressed="true">Todo</button>
+          <button class="filter-button" type="button" data-categoria="alimentos" aria-pressed="false">Alimentos</button>
+          <button class="filter-button" type="button" data-categoria="suplementos" aria-pressed="false">Suplementos</button>
+          <button class="filter-button" type="button" data-categoria="salud" aria-pressed="false">Salud animal</button>
+          <button class="filter-button" type="button" data-categoria="equipos" aria-pressed="false">Equipos</button>
+        </div>
+        <span class="result-count" id="resultado-cantidad">13 productos</span>
+      </div>
+      <div class="product-grid" id="catalogo">
+        <article class="product" data-categoria="alimentos" data-nombre="mezcla lechera alimento ganado vacas" data-precio="28.90">
+          <div class="product-image image-feed"><img src="Balanceados.jpg" alt="Mockup de alimento balanceado La Granja para engorde, ganado lechero y terneros" loading="lazy"><span class="product-tag">Más elegido</span><button class="quick-add" type="button" aria-label="Agregar Mezcla Lechera al carrito">+</button></div>
+          <div class="product-info"><span class="product-category">ALIMENTOS</span><h3>Mezcla Lechera</h3><div class="product-bottom"><strong>$ 28.90</strong><span>Bolsa · 40 kg</span></div><button class="product-detail" type="button">Ver detalle</button></div>
+        </article>
+        <article class="product" data-categoria="suplementos" data-nombre="melaza ganadera suplemento energético líquido ganado" data-precio="16.50">
+          <div class="product-image image-salt"><img src="melaza.jpg" alt="Mockup de melaza y suplementos La Granja" loading="lazy"><button class="quick-add" type="button" aria-label="Agregar Melaza Ganadera al carrito">+</button></div>
+          <div class="product-info"><span class="product-category">SUPLEMENTOS</span><h3>Melaza Ganadera</h3><div class="product-bottom"><strong>$ 16.50</strong><span>Balde · 20 kg</span></div><button class="product-detail" type="button">Ver detalle</button></div>
+        </article>
+        <article class="product" data-categoria="salud" data-nombre="vitaminas bovinas salud animal vitaminas" data-precio="12.75">
+          <div class="product-image image-vitamins"><img src="Vitaminas.jpg" alt="Mockup de vitaminas La Granja para ganado" loading="lazy"><span class="product-tag tag-blue">Cuidado diario</span><button class="quick-add" type="button" aria-label="Agregar Vitaminas Bovinas al carrito">+</button></div>
+          <div class="product-info"><span class="product-category">SALUD ANIMAL</span><h3>Vitaminas Bovinas</h3><div class="product-bottom"><strong>$ 12.75</strong><span>Frasco · 500 ml</span></div><button class="product-detail" type="button">Ver detalle</button></div>
+        </article>
+        <article class="product" data-categoria="alimentos" data-nombre="forraje premium alimento ganado heno" data-precio="21.00">
+          <div class="product-image image-hay"><img src="forraje.jpg" alt="Mockup de Forraje Premium La Granja, fardo de 20 kg" loading="lazy"><button class="quick-add" type="button" aria-label="Agregar Forraje Premium al carrito">+</button></div>
+          <div class="product-info"><span class="product-category">ALIMENTOS</span><h3>Forraje Premium</h3><div class="product-bottom"><strong>$ 21.00</strong><span>Fardo · 20 kg</span></div><button class="product-detail" type="button">Ver detalle</button></div>
+        </article>
+        <article class="product" data-categoria="equipos" data-nombre="bebedero automático equipo agua ganado" data-precio="44.00">
+          <div class="product-image image-water"><img src="bebedero.jpg" alt="Bebedero automático La Granja de alto flujo con ganado" loading="lazy"><button class="quick-add" type="button" aria-label="Agregar Bebedero Automático al carrito">+</button></div>
+          <div class="product-info"><span class="product-category">EQUIPOS</span><h3>Bebedero Automático</h3><div class="product-bottom"><strong>$ 44.00</strong><span>Unidad · alto flujo</span></div><button class="product-detail" type="button">Ver detalle</button></div>
+        </article>
+        <article class="product" data-categoria="suplementos" data-nombre="bloque nutricional suplementos ganado minerales" data-precio="9.80">
+          <div class="product-image image-block"><img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=720&q=85" alt="Ganado en una finca verde" loading="lazy"><span class="product-tag tag-yellow">Buen complemento</span><button class="quick-add" type="button" aria-label="Agregar Bloque Nutricional al carrito">+</button></div>
+          <div class="product-info"><span class="product-category">SUPLEMENTOS</span><h3>Bloque Nutricional</h3><div class="product-bottom"><strong>$ 9.80</strong><span>Unidad · 10 kg</span></div><button class="product-detail" type="button">Ver detalle</button></div>
+        </article>
+        <article class="product" data-categoria="salud" data-nombre="jabón garrapaticida baño salud animal bovinos" data-precio="14.20">
+          <div class="product-image image-health"><img src="jabon.jpg" alt="Mockup de Jabón Garrapaticida La Granja para ganado bovino" loading="lazy"><button class="quick-add" type="button" aria-label="Agregar Jabón Garrapaticida al carrito">+</button></div>
+          <div class="product-info"><span class="product-category">SALUD ANIMAL</span><h3>Jabón Garrapaticida</h3><div class="product-bottom"><strong>$ 14.20</strong><span>Unidad · 500 g</span></div><button class="product-detail" type="button">Ver detalle</button></div>
+        </article>
+        <article class="product" data-categoria="equipos" data-nombre="guantes trabajo equipo protección campo" data-precio="8.40">
+          <div class="product-image image-gloves"><img src="guantes.jpg" alt="Mockup de guantes de trabajo resistentes La Granja" loading="lazy"><span class="product-tag tag-blue">Resistentes</span><button class="quick-add" type="button" aria-label="Agregar Guantes de Trabajo al carrito">+</button></div>
+          <div class="product-info"><span class="product-category">EQUIPOS</span><h3>Guantes de Trabajo</h3><div class="product-bottom"><strong>$ 8.40</strong><span>Par · uso rudo</span></div><button class="product-detail" type="button">Ver detalle</button></div>
+        </article>
+        <article class="product" data-categoria="alimentos" data-nombre="maíz molido alimento energía bovinos" data-precio="18.60">
+          <div class="product-image image-corn"><img src="maiz.jpg" alt="Mockup de Maíz Molido La Granja, bolsa de 25 kg" loading="lazy"><button class="quick-add" type="button" aria-label="Agregar Maíz Molido al carrito">+</button></div>
+          <div class="product-info"><span class="product-category">ALIMENTOS</span><h3>Maíz Molido</h3><div class="product-bottom"><strong>$ 18.60</strong><span>Bolsa · 25 kg</span></div><button class="product-detail" type="button">Ver detalle</button></div>
+        </article>
+        <article class="product" data-categoria="suplementos" data-nombre="fosfato mineral suplemento calcio ganado" data-precio="23.50">
+          <div class="product-image image-minerals"><img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=720&q=85" alt="Cultivo de cereales en el campo" loading="lazy"><button class="quick-add" type="button" aria-label="Agregar Fosfato Mineral al carrito">+</button></div>
+          <div class="product-info"><span class="product-category">SUPLEMENTOS</span><h3>Fosfato Mineral</h3><div class="product-bottom"><strong>$ 23.50</strong><span>Bolsa · 20 kg</span></div><button class="product-detail" type="button">Ver detalle</button></div>
+        </article>
+        <article class="product" data-categoria="equipos" data-nombre="cuerda ganadera equipo cercas campo" data-precio="11.90">
+          <div class="product-image image-rope"><img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=720&q=85" alt="Naturaleza y vida silvestre en el campo" loading="lazy"><button class="quick-add" type="button" aria-label="Agregar Cuerda Ganadera al carrito">+</button></div>
+          <div class="product-info"><span class="product-category">EQUIPOS</span><h3>Cuerda Ganadera</h3><div class="product-bottom"><strong>$ 11.90</strong><span>Rollo · 20 m</span></div><button class="product-detail" type="button">Ver detalle</button></div>
+        </article>
+        <article class="product" data-categoria="equipos" data-nombre="chaleco la granja ropa vestuario trabajo campo" data-precio="32.00">
+          <div class="product-image image-vest"><img src="chaleco.jpg" alt="Chaleco de trabajo La Granja con bolsillos y logotipo bordado" loading="lazy"><span class="product-tag">Edición La Granja</span><button class="quick-add" type="button" aria-label="Agregar Chaleco de Campo al carrito">+</button></div>
+          <div class="product-info"><span class="product-category">VESTUARIO</span><h3>Chaleco de Campo</h3><div class="product-bottom"><strong>$ 32.00</strong><span>Unidad · verde</span></div><button class="product-detail" type="button">Ver detalle</button></div>
+        </article>
+        <article class="product" data-categoria="equipos" data-nombre="sombrero la granja campo protección sol" data-precio="18.00">
+          <div class="product-image image-hat"><img src="sombrero.jpg" alt="Sombrero de campo La Granja con isotipo bordado" loading="lazy"><span class="product-tag tag-yellow">Edición La Granja</span><button class="quick-add" type="button" aria-label="Agregar Sombrero de Campo al carrito">+</button></div>
+          <div class="product-info"><span class="product-category">VESTUARIO</span><h3>Sombrero de Campo</h3><div class="product-bottom"><strong>$ 18.00</strong><span>Unidad · palma</span></div><button class="product-detail" type="button">Ver detalle</button></div>
+        </article>
+      </div>
+      <p class="empty-state" id="sin-resultados" hidden>No encontramos productos. Prueba otra búsqueda o categoría.</p>
+    </section>
+
+    <section class="category-section" id="categorias">
+      <div class="section-heading"><div><p class="eyebrow">Encuentra lo tuyo</p><h2>Un buen lugar para empezar</h2></div><p>Explora por lo que estás buscando.</p></div>
+      <div class="category-grid">
+        <button class="category-tile category-food" type="button" data-categoria="alimentos"><span>01 / NUTRICIÓN</span><strong>Alimentos</strong><i aria-hidden="true">↗</i></button>
+        <button class="category-tile category-care" type="button" data-categoria="salud"><span>02 / BIENESTAR</span><strong>Salud animal</strong><i aria-hidden="true">↗</i></button>
+        <button class="category-tile category-extra" type="button" data-categoria="suplementos"><span>03 / EQUILIBRIO</span><strong>Suplementos</strong><i aria-hidden="true">↗</i></button>
+        <button class="category-tile category-tools" type="button" data-categoria="equipos"><span>04 / TRABAJO</span><strong>Equipos</strong><i aria-hidden="true">↗</i></button>
+      </div>
+    </section>
+
+    <section class="how-section" id="como-comprar">
+      <div class="how-heading"><p class="eyebrow">Fácil y sin vueltas</p><h2>Así de sencillo es comprar</h2><p>Y si algo no queda claro, aquí estamos para ayudarte.</p></div>
+      <div class="steps-grid"><div><span>01</span><h3>Elige lo que necesitas</h3><p>Explora el catálogo, filtra por categoría y agrega productos al carrito.</p></div><div><span>02</span><h3>Cuéntanos dónde</h3><p>Comparte tus datos y el lugar donde quieres recibir tu pedido.</p></div><div><span>03</span><h3>Coordinamos contigo</h3><p>Confirmamos existencias, costo de envío y forma de pago antes de cerrar.</p></div></div>
+    </section>
+
+    <section class="promo-band"><div><p class="eyebrow">Atención de campo</p><h2>¿No encuentras lo que buscas?</h2><p>Cuéntanos qué necesitas y te ayudamos a encontrarlo.</p></div><a class="button button-light" href="https://wa.me/?text=Hola%2C%20estoy%20buscando%20un%20producto%20para%20mi%20campo" target="_blank" rel="noopener noreferrer">Consultar disponibilidad <span aria-hidden="true">↗</span></a></section>
+
+    <section class="story" id="nosotros">
+      <div class="story-image" role="img" aria-label="Integrante del equipo La Granja en la tienda"><span>DESDE EL CAMPO, CON CARIÑO</span></div>
+      <div class="story-copy"><p class="eyebrow">Nuestra historia</p><h2>Sabemos que cada día en el campo cuenta.</h2><p>La Granja nació para acercar productos confiables a quienes trabajan la tierra y cuidan de sus animales. Aquí encuentras un equipo dispuesto a escucharte y ayudarte a elegir.</p><a href="#ayuda" class="text-link">Hablemos de tu campo <span aria-hidden="true">→</span></a></div>
+    </section>
+
+    <section class="tips-section" id="consejos">
+      <div class="section-heading"><div><p class="eyebrow">Desde nuestra experiencia</p><h2>Unos consejos de campo</h2></div><p>Pequeños cuidados que hacen una gran diferencia.</p></div>
+      <div class="tips-grid"><article><span>BIENESTAR ANIMAL · 4 MIN</span><h3>Agua limpia: un cuidado de todos los días</h3><p>Revisar los bebederos con frecuencia ayuda a que el ganado tenga agua fresca y disponible.</p><a href="#preguntas" class="text-link">Ver preguntas frecuentes <span aria-hidden="true">→</span></a></article><article><span>NUTRICIÓN · 3 MIN</span><h3>Una rutina de alimentación constante</h3><p>Observar el consumo y mantener horarios ayuda a reconocer cambios a tiempo.</p><a href="#ayuda" class="text-link">Pedir asesoría <span aria-hidden="true">→</span></a></article><article><span>EN EL CAMPO · 5 MIN</span><h3>Prepara tus insumos antes de la temporada</h3><p>Una lista sencilla puede ayudarte a organizar mejor tus compras y evitar contratiempos.</p><a href="#productos" class="text-link">Explorar la tienda <span aria-hidden="true">→</span></a></article></div>
+    </section>
+
+    <section class="faq-section" id="preguntas">
+      <div class="faq-intro"><p class="eyebrow">Estamos para ayudarte</p><h2>Preguntas frecuentes</h2><p>¿Te queda alguna duda? Escríbenos y te orientamos.</p><a class="text-link" href="#ayuda">Hablar con el equipo <span aria-hidden="true">→</span></a></div>
+      <div class="faq-list"><details><summary>¿Cómo se confirma el costo del envío?<span aria-hidden="true">+</span></summary><p>Depende de tu ubicación y del tamaño del pedido. Te lo confirmamos antes de cerrar la compra.</p></details><details><summary>¿Puedo consultar si hay existencias?<span aria-hidden="true">+</span></summary><p>Claro. Al enviar tu solicitud, nuestro equipo revisará disponibilidad y te contactará para confirmarla.</p></details><details><summary>¿Qué formas de pago aceptan?<span aria-hidden="true">+</span></summary><p>Puedes indicar tu preferencia en el pedido. Confirmaremos las opciones disponibles y los datos de pago de forma segura.</p></details><details><summary>¿La compra se cobra en esta página?<span aria-hidden="true">+</span></summary><p>No. Este sitio envía una solicitud de pedido, no procesa pagos. El equipo confirma el total y coordina el pago contigo.</p></details></div>
+    </section>
+
+    <section class="contact-band" id="ayuda"><div><p class="eyebrow">¿Te damos una mano?</p><h2>Cuéntanos qué necesita tu campo.</h2><p>El equipo de La Granja está listo para escucharte.</p></div><a class="button button-green" href="https://wa.me/?text=Hola%2C%20quiero%20consultar%20sobre%20productos%20para%20mi%20campo" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp <span aria-hidden="true">↗</span></a></section>
+  </main>
+
+  <footer class="site-footer"><a class="brand brand-footer" href="#inicio"><img class="brand-isotipo" src="Isotipo.png" alt=""><span class="brand-name">La Granja<small>TIENDA AGROPECUARIA</small></span></a><p>Lo bueno del campo, más cerca de ti.</p><a href="#preguntas">Preguntas frecuentes</a><a href="#ayuda">Contacto</a><span>© <span id="anio"></span> La Granja</span></footer>
+
+  <div class="drawer-backdrop" id="fondo-carrito" hidden></div>
+  <aside class="cart-drawer" id="panel-carrito" aria-labelledby="titulo-carrito" aria-hidden="true" inert>
+    <div class="drawer-heading"><div><p class="eyebrow">Tu selección</p><h2 id="titulo-carrito">Tu carrito <span id="cantidad-titulo">(0)</span></h2></div><button class="close-button" id="cerrar-carrito" type="button" aria-label="Cerrar carrito">×</button></div>
+    <div class="cart-items" id="productos-carrito"><p class="cart-empty">Todavía no agregas productos.</p></div>
+    <div class="cart-footer"><div class="cart-total"><span>Total de productos</span><strong id="subtotal">$ 0.00</strong></div><p>El envío se coordina al confirmar tu pedido.</p><button class="button button-green checkout-button" id="iniciar-compra" type="button" disabled>Continuar pedido <span aria-hidden="true">→</span></button></div>
+  </aside>
+
+  <dialog class="checkout-dialog" id="modal-compra" aria-labelledby="titulo-compra">
+    <form id="form-compra" class="checkout-form">
+      <button class="close-button dialog-close" type="button" id="cerrar-modal" aria-label="Cerrar formulario">×</button>
+      <p class="eyebrow">Un último paso</p><h2 id="titulo-compra">¿A dónde lo enviamos?</h2>
+      <p class="dialog-intro">Déjanos tus datos y preferencia de pago. Confirmaremos disponibilidad, envío y total antes de cobrar.</p>
+      <label for="nombre">Tu nombre</label><input id="nombre" name="nombre" type="text" autocomplete="name" required>
+      <label for="telefono">Teléfono o WhatsApp</label><input id="telefono" name="telefono" type="tel" autocomplete="tel" required>
+      <label for="correo-compra">Correo electrónico</label><input id="correo-compra" name="correo" type="email" autocomplete="email" required>
+      <label for="direccion">Dirección de entrega</label><textarea id="direccion" name="direccion" rows="2" required></textarea>
+      <fieldset class="payment-options"><legend>¿Cómo prefieres pagar?</legend><label class="payment-option"><input type="radio" name="pago" value="Contra entrega" required><span><strong>Contra entrega</strong><small>Al recibir, sujeto a cobertura</small></span></label><label class="payment-option"><input type="radio" name="pago" value="Transferencia"><span><strong>Transferencia</strong><small>Te compartimos los datos al confirmar</small></span></label><label class="payment-option"><input type="radio" name="pago" value="Tarjeta"><span><strong>Tarjeta</strong><small>Coordinamos un enlace de pago seguro</small></span></label></fieldset>
+      <div class="order-summary"><span>Subtotal de productos</span><strong id="resumen-subtotal">$ 0.00</strong></div>
+      <p class="payment-note">No se realiza ningún cobro en esta página. El equipo confirmará el importe final y la forma de pago contigo.</p>
+      <button class="button button-green" type="submit">Enviar solicitud de compra <span aria-hidden="true">→</span></button>
+    </form>
+  </dialog>
+
+  <dialog class="checkout-dialog account-dialog" id="modal-acceso" aria-labelledby="titulo-acceso">
+    <form class="checkout-form" id="form-acceso">
+      <button class="close-button dialog-close" type="button" data-close-dialog aria-label="Cerrar">×</button>
+      <p class="eyebrow">Qué bueno verte</p><h2 id="titulo-acceso">Iniciar sesión</h2>
+      <p class="dialog-intro">Accede a tu perfil y consulta tus datos guardados en este dispositivo.</p>
+      <label for="acceso-correo">Correo electrónico</label><input id="acceso-correo" name="correo" type="email" autocomplete="email" required>
+      <label for="acceso-clave">Contraseña</label><input id="acceso-clave" name="clave" type="password" autocomplete="current-password" required minlength="4">
+      <button class="button button-green" type="submit">Ingresar <span aria-hidden="true">→</span></button>
+      <div class="dialog-links"><button type="button" data-open-dialog="modal-registro">Crear una cuenta</button><button type="button" data-open-dialog="modal-recuperar">Olvidé mi contraseña</button></div>
+      <p class="demo-note">Prototipo: el acceso se simula localmente, no valida credenciales en un servidor.</p>
+    </form>
+  </dialog>
+
+  <dialog class="checkout-dialog account-dialog" id="modal-registro" aria-labelledby="titulo-registro">
+    <form class="checkout-form" id="form-registro">
+      <button class="close-button dialog-close" type="button" data-close-dialog aria-label="Cerrar">×</button>
+      <p class="eyebrow">Tu espacio en La Granja</p><h2 id="titulo-registro">Crear cuenta</h2>
+      <p class="dialog-intro">Registra tus datos para personalizar tu experiencia.</p>
+      <label for="registro-nombre">Nombre completo</label><input id="registro-nombre" name="nombre" autocomplete="name" required>
+      <label for="registro-correo">Correo electrónico</label><input id="registro-correo" name="correo" type="email" autocomplete="email" required>
+      <label for="registro-telefono">Teléfono</label><input id="registro-telefono" name="telefono" type="tel" autocomplete="tel">
+      <label for="registro-clave">Crear contraseña</label><input id="registro-clave" name="clave" type="password" autocomplete="new-password" minlength="4" required>
+      <button class="button button-green" type="submit">Registrarme <span aria-hidden="true">→</span></button>
+      <div class="dialog-links"><button type="button" data-open-dialog="modal-acceso">Ya tengo una cuenta</button></div>
+      <p class="demo-note">Datos de demostración: se guardan solo en el almacenamiento local de este navegador.</p>
+    </form>
+  </dialog>
+
+  <dialog class="checkout-dialog account-dialog" id="modal-recuperar" aria-labelledby="titulo-recuperar">
+    <form class="checkout-form" id="form-recuperar">
+      <button class="close-button dialog-close" type="button" data-close-dialog aria-label="Cerrar">×</button>
+      <p class="eyebrow">Recupera el acceso</p><h2 id="titulo-recuperar">Restablecer contraseña</h2>
+      <p class="dialog-intro">Escribe tu correo. En esta versión de prototipo te mostraremos la confirmación en pantalla, sin enviar un correo real.</p>
+      <label for="recuperar-correo">Correo electrónico</label><input id="recuperar-correo" name="correo" type="email" autocomplete="email" required>
+      <button class="button button-green" type="submit">Solicitar recuperación <span aria-hidden="true">→</span></button>
+      <div class="dialog-links"><button type="button" data-open-dialog="modal-acceso">Volver a iniciar sesión</button></div>
+    </form>
+  </dialog>
+
+  <dialog class="checkout-dialog account-dialog" id="modal-perfil" aria-labelledby="titulo-perfil">
+    <div class="checkout-form profile-panel">
+      <button class="close-button dialog-close" type="button" data-close-dialog aria-label="Cerrar">×</button>
+      <p class="eyebrow">Mi espacio</p><h2 id="titulo-perfil">Perfil de usuario</h2>
+      <div class="profile-card"><span class="profile-avatar" aria-hidden="true">LG</span><div><strong id="perfil-nombre">Invitado</strong><span id="perfil-correo">Inicia sesión para guardar tus datos</span></div></div>
+      <div class="profile-actions"><button class="button button-green" id="editar-perfil" type="button">Editar perfil</button><button class="button button-outline" id="abrir-configuracion" type="button">Configuración</button></div>
+      <h3 class="profile-subtitle">Mis solicitudes</h3><div id="historial-pedidos" class="order-history"></div>
+      <button class="text-button" id="cerrar-sesion" type="button">Cerrar sesión</button>
+      <p class="demo-note">Perfil y solicitudes guardados localmente para este prototipo.</p>
+    </div>
+  </dialog>
+
+  <dialog class="checkout-dialog account-dialog" id="modal-editar-perfil" aria-labelledby="titulo-editar-perfil">
+    <form class="checkout-form" id="form-editar-perfil">
+      <button class="close-button dialog-close" type="button" data-close-dialog aria-label="Cerrar">×</button>
+      <p class="eyebrow">Tus datos</p><h2 id="titulo-editar-perfil">Editar perfil</h2>
+      <label for="editar-nombre">Nombre completo</label><input id="editar-nombre" name="nombre" autocomplete="name" required>
+      <label for="editar-correo">Correo electrónico</label><input id="editar-correo" name="correo" type="email" autocomplete="email" required>
+      <label for="editar-telefono">Teléfono</label><input id="editar-telefono" name="telefono" type="tel" autocomplete="tel">
+      <button class="button button-green" type="submit">Guardar cambios <span aria-hidden="true">→</span></button>
+    </form>
+  </dialog>
+
+  <dialog class="checkout-dialog account-dialog" id="modal-configuracion" aria-labelledby="titulo-configuracion">
+    <form class="checkout-form" id="form-configuracion">
+      <button class="close-button dialog-close" type="button" data-close-dialog aria-label="Cerrar">×</button>
+      <p class="eyebrow">Personaliza la app</p><h2 id="titulo-configuracion">Configuración</h2>
+      <label class="setting-row"><span><strong>Recibir novedades</strong><small>Ofertas, consejos y noticias de La Granja</small></span><input name="novedades" type="checkbox"></label>
+      <label class="setting-row"><span><strong>Recordatorios de compra</strong><small>Ayuda para organizar tus próximos pedidos</small></span><input name="recordatorios" type="checkbox"></label>
+      <h3 class="profile-subtitle">Redes oficiales</h3>
+      <label for="red-facebook">Facebook (URL)</label><input id="red-facebook" name="facebook" type="url" placeholder="https://facebook.com/tu-cuenta">
+      <label for="red-instagram">Instagram (URL)</label><input id="red-instagram" name="instagram" type="url" placeholder="https://instagram.com/tu-cuenta">
+      <label for="red-tiktok">TikTok (URL)</label><input id="red-tiktok" name="tiktok" type="url" placeholder="https://tiktok.com/@tu-cuenta">
+      <button class="button button-green" type="submit">Guardar configuración <span aria-hidden="true">→</span></button>
+    </form>
+  </dialog>
+
+  <dialog class="checkout-dialog account-dialog" id="modal-notificaciones" aria-labelledby="titulo-notificaciones">
+    <div class="checkout-form">
+      <button class="close-button dialog-close" type="button" data-close-dialog aria-label="Cerrar">×</button>
+      <p class="eyebrow">Avisos de la tienda</p><h2 id="titulo-notificaciones">Notificaciones</h2>
+      <div class="notification-list"><article><span>HOY · TIENDA</span><h3>Tu próxima compra, más fácil</h3><p>Agrega los productos que necesitas al carrito y envía una solicitud para coordinar tu pedido.</p><a href="#productos" class="text-link" data-close-parent>Explorar productos →</a></article><article><span>CONSEJO · CAMPO</span><h3>¿Necesitas una recomendación?</h3><p>El equipo puede ayudarte a encontrar productos para el cuidado de tus animales.</p><a href="#ayuda" class="text-link" data-close-parent>Contactar al equipo →</a></article></div>
+      <button class="button button-outline" type="button" data-close-dialog>Cerrar notificaciones</button>
+    </div>
+  </dialog>
+
+  <dialog class="checkout-dialog account-dialog product-dialog" id="modal-detalle-producto" aria-labelledby="detalle-nombre">
+    <div class="checkout-form">
+      <button class="close-button dialog-close" type="button" data-close-dialog aria-label="Cerrar">×</button>
+      <img class="detail-image" id="detalle-imagen" src="" alt="">
+      <p class="eyebrow" id="detalle-categoria"></p><h2 id="detalle-nombre"></h2>
+      <p class="detail-description" id="detalle-descripcion"></p>
+      <div class="detail-price"><strong id="detalle-precio"></strong><span id="detalle-presentacion"></span></div>
+      <button class="button button-green" id="detalle-agregar" type="button">Agregar al carrito <span aria-hidden="true">＋</span></button>
+    </div>
+  </dialog>
+
+  <dialog class="checkout-dialog account-dialog" id="modal-confirmacion" aria-labelledby="titulo-confirmacion">
+    <div class="checkout-form confirmation-panel">
+      <span class="confirmation-mark" aria-hidden="true">✓</span><p class="eyebrow">Solicitud recibida</p><h2 id="titulo-confirmacion">¡Gracias por tu pedido!</h2>
+      <p class="dialog-intro">Guardamos tu solicitud en este dispositivo. El equipo de La Granja debe confirmar disponibilidad, envío y pago contigo.</p>
+      <p class="confirmation-reference">Referencia <strong id="referencia-pedido"></strong></p>
+      <button class="button button-green" type="button" data-close-dialog>Volver a la tienda</button>
+    </div>
+  </dialog>
+  <div class="toast" id="aviso" role="status" aria-live="polite"></div>
+</body>
+</html>
